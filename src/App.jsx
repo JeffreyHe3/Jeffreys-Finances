@@ -6,13 +6,13 @@ import {
   Wallet, TrendingUp, TrendingDown, DollarSign, PieChart as PieChartIcon,
   CreditCard, Target, Calculator, Plus, Search, Filter, Download, Upload,
   Trash2, Edit, CheckCircle, AlertTriangle, ArrowUpRight, ArrowDownRight,
-  Sun, Moon, ShieldAlert, Sparkles, ChevronRight, Layers, Award, RefreshCw,
+  Sun, Moon, ShieldAlert, ChevronRight, Layers, Award, RefreshCw,
   MoreVertical, Check, X, Calendar, Tag, Briefcase, PiggyBank, BarChart3, Clock
 } from 'lucide-react';
 
 // --- INITIAL MOCK DATA ---
 const INITIAL_TRANSACTIONS = [
-  { id: 'tx-1', date: '2026-10-14', description: 'Tech Corp Salary', amount: 4800, type: 'income', category: 'Salary', tags: ['work', 'main'] },
+  { id: 'tx-1', date: '2026-10-14', description: 'Salary', amount: 4800, type: 'income', category: 'Salary', tags: ['work', 'main'] },
   { id: 'tx-2', date: '2026-10-12', description: 'Luxury Apartment Rent', amount: 1850, type: 'expense', category: 'Housing', tags: ['fixed', 'essential'] },
   { id: 'tx-3', date: '2026-10-10', description: 'Whole Foods Market', amount: 245.50, type: 'expense', category: 'Food', tags: ['groceries'] },
   { id: 'tx-4', date: '2026-10-08', description: 'Freelance Design Client', amount: 1200, type: 'income', category: 'Freelance', tags: ['side-hustle'] },
@@ -263,7 +263,6 @@ export default function App() {
               {activeTab === 'portfolio' && 'Asset Portfolio'}
               {activeTab === 'calculators' && 'Financial Calculators'}
             </h2>
-            <p className="text-sm text-slate-400">Welcome back, here is your financial health status today.</p>
           </div>
 
           <div className="flex items-center gap-3">
@@ -366,7 +365,6 @@ export default function App() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-semibold text-lg">Financial Health</h3>
-                    <Sparkles className="w-5 h-5 text-amber-400" />
                   </div>
                   <p className="text-xs text-slate-400 mb-6">Score calculated based on savings rate & debt</p>
 
@@ -386,11 +384,11 @@ export default function App() {
                   <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">AI Insights & Tips</span>
                   <div className="flex items-start gap-2.5 text-xs text-slate-300 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
                     <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                    <span>Entertainment spending is 13% above target this month.</span>
+                    <span>Entertainment spending is 13% above target this month</span>
                   </div>
                   <div className="flex items-start gap-2.5 text-xs text-slate-300 bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/50">
                     <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                    <span>Emergency fund is on track to hit target in 2 months.</span>
+                    <span>Emergency fund is on track to hit target in 2 months</span>
                   </div>
                 </div>
               </div>
@@ -467,8 +465,8 @@ export default function App() {
                       >
                         <div className="flex items-center gap-3">
                           <div className={`p-2 rounded-xl ${tx.type === 'income'
-                              ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                              : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
+                            ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
+                            : 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
                             }`}>
                             {tx.type === 'income' ? <ArrowUpRight className="w-4 h-4" /> : <ArrowDownRight className="w-4 h-4" />}
                           </div>
@@ -609,10 +607,10 @@ function NavItem({ id, icon, label, active, onClick, darkMode }) {
     <button
       onClick={onClick}
       className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl font-medium text-sm transition-all whitespace-nowrap ${active
-          ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 font-semibold'
-          : darkMode
-            ? 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-200'
-            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+        ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 font-semibold'
+        : darkMode
+          ? 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-200'
+          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
         }`}
     >
       {icon}
